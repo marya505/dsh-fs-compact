@@ -1,0 +1,6 @@
+# dsh-fs-compact bundle layer.
+# Applied after the profile's own bundles; the profile's cordis.patch.yml can
+# still override these entries.
+- insert:
+    - id: dsh-fs-compact
+      name: dsh-fs-compact

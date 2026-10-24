@@ -1,0 +1,54 @@
+{
+  "name": "dsh-fs-compact",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "description": "Token-lean filesystem tools for DSH: plain-text output, cwd-relative paths, read-before-replace.",
+  "license": "MIT",
+  "author": "marya505",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "filesystem",
+    "grep",
+    "glob",
+    "token-efficiency"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marya505/dsh-fs-compact.git"
+  },
+  "homepage": "https://github.com/marya505/dsh-fs-compact#readme",
+  "bugs": {
+    "url": "https://github.com/marya505/dsh-fs-compact/issues"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dsh": ">=0.2.1-rc.3"
+    }
+  }
+}
