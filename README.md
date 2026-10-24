@@ -1,6 +1,7 @@
 # dsh-fs-compact
 
 [![test](https://github.com/marya505/dsh-fs-compact/actions/workflows/test.yml/badge.svg)](https://github.com/marya505/dsh-fs-compact/actions/workflows/test.yml)
+[![npm](https://img.shields.io/npm/v/dsh-fs-compact.svg)](https://www.npmjs.com/package/dsh-fs-compact)
 
 Token-lean filesystem tools for DeepSeek Harness (DSH): `fs_read`, `fs_grep`,
 `fs_glob` and `fs_replace` with compact plain-text output, paths relative to
@@ -30,10 +31,29 @@ Design choices:
 Requires DSH `>=0.2.1-rc.3`.
 
 ```bash
-# From GitHub — `dsh plugin` forwards its arguments to pnpm
-dsh plugin --profile <profile> add "github:marya505/dsh-fs-compact"
+# npm (recommended)
+dsh plugin --profile <profile> add dsh-fs-compact
 
-# Local development checkout
+# pin a version
+dsh plugin --profile <profile> add dsh-fs-compact@0.3.1
+```
+
+From GitHub instead — `dsh plugin` forwards its arguments to pnpm:
+
+```bash
+dsh plugin --profile <profile> add "github:marya505/dsh-fs-compact"
+```
+
+If Git cannot reach GitHub over HTTPS (for example `CRYPT_E_NO_REVOCATION_CHECK`
+on Windows), install the pinned tarball:
+
+```bash
+dsh plugin --profile <profile> add "https://codeload.github.com/marya505/dsh-fs-compact/tar.gz/347518e9d222fb70289068f26ad43992510a9598"
+```
+
+Local development checkout:
+
+```bash
 dsh plugin --profile <profile> add "file:<path-to-checkout>"
 ```
 
@@ -41,15 +61,15 @@ dsh plugin --profile <profile> add "file:<path-to-checkout>"
 `PATH`, run the CLI from your DSH installation, for example
 `<DSH install>/resources/runtime/cli/bin/dsh` (`.cmd` on Windows).
 
-**Updating.** pnpm hard-links `file:` dependencies, so an already-installed
-local checkout is not refreshed by `add` alone:
+**Updating.** Remove and re-add the package, then restart:
 
 ```bash
 dsh plugin --profile <profile> remove dsh-fs-compact
-dsh plugin --profile <profile> add "file:<path-to-checkout>"
+dsh plugin --profile <profile> add dsh-fs-compact
 ```
 
-Restart the DSH desktop app after installing or updating.
+A local `file:` checkout uses its path in the second command instead; pnpm
+hard-links it, so editing the source also requires the remove + add.
 
 ## Enable / disable
 

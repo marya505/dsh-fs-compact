@@ -8,3 +8,4 @@ coverage/
 Thumbs.db
 .vscode/
 .idea/
+.npmrc

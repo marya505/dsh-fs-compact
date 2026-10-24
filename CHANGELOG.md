@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.1] - 2026-10-24
+
+### Changed
+
+- Published to npm as `dsh-fs-compact`. No functional changes from 0.3.0.
+
 ## [0.3.0] - 2026-10-22
 
 ### Added

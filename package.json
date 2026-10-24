@@ -1,7 +1,6 @@
 {
   "name": "dsh-fs-compact",
-  "version": "0.3.0",
-  "private": true,
+  "version": "0.3.1",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -10,6 +9,10 @@
   },
   "description": "Token-lean filesystem tools for DSH: plain-text output, cwd-relative paths, read-before-replace.",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "author": "marya505",
   "keywords": [
     "dsh",
@@ -37,7 +40,8 @@
     "SECURITY.md"
   ],
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "prepublishOnly": "node --test"
   },
   "engines": {
     "node": ">=20"
